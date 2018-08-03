@@ -52,4 +52,21 @@ class ProjectRepository {
 
         return data
     }
+
+    fun getProjectDetails(userId: String, projectName: String) {
+        val data = MutableLiveData<Resource<Project>>()
+
+        githubService
+                .getProjectDetails(userId, projectName)
+                .enqueue(object: Callback<Project> {
+                    override fun onFailure(call: Call<Project>?, t: Throwable?) {
+                        val e = AppException(t)
+                        data.value = Resource.error(e)
+                    }
+
+                    override fun onResponse(call: Call<Project>?, response: Response<Project>?) {
+                        data.value = Resource.success(response?.body())
+                    }
+                })
+    }
 }
