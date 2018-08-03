@@ -1,4 +1,4 @@
-package jp.furyu.mvvm_test
+package jp.furyu.mvvm_test.api
 
 import jp.furyu.mvvm_test.dto.Project
 import retrofit2.Call
