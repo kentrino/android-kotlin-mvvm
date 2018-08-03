@@ -12,10 +12,11 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ProjectRepository {
+class ProjectRepository
+private constructor() {
     private var githubService: GithubApi
 
-    private constructor() {
+    init {
         val retrofit = Retrofit.Builder()
                 .baseUrl(GithubApi.GITHUB_API_URL)
                 // 他のサンプルではこうなっていた
