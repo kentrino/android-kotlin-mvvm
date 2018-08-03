@@ -1,5 +1,6 @@
 package jp.furyu.mvvm_test
 
+import jp.furyu.mvvm_test.dto.Project
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

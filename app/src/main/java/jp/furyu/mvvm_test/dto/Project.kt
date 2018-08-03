@@ -1,4 +1,4 @@
-package jp.furyu.mvvm_test
+package jp.furyu.mvvm_test.dto
 
 import java.util.*
 
