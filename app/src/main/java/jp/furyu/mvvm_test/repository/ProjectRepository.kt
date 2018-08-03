@@ -2,7 +2,7 @@ package jp.furyu.mvvm_test.repository
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
-import jp.furyu.mvvm_test.api.GithubService
+import jp.furyu.mvvm_test.api.GithubApi
 import jp.furyu.mvvm_test.dto.Project
 import jp.furyu.mvvm_test.Resource
 import jp.furyu.mvvm_test.exception.AppException
@@ -13,17 +13,17 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ProjectRepository {
-    private var githubService: GithubService
+    private var githubService: GithubApi
 
     private constructor() {
         val retrofit = Retrofit.Builder()
-                .baseUrl(GithubService.GITHUB_API_URL)
+                .baseUrl(GithubApi.GITHUB_API_URL)
                 // 他のサンプルではこうなっていた
                 // https://medium.com/@elye.project/kotlin-and-retrofit-2-tutorial-with-working-codes-333a4422a890
                 // .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-        githubService = retrofit.create(GithubService::class.java)
+        githubService = retrofit.create(GithubApi::class.java)
     }
 
     companion object {

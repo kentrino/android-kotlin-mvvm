@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface GithubService {
+interface GithubApi {
     @GET("users/{user}/repos")
     fun getProjectList(@Path("user") user: String): Call<List<Project>>
 
