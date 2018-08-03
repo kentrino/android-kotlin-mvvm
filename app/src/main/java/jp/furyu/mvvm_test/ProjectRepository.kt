@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ProjectRepository {
-    private lateinit var githubService: GithubService
+    private var githubService: GithubService
 
     private constructor() {
         val retrofit = Retrofit.Builder()
