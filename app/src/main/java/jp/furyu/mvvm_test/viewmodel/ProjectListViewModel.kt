@@ -2,9 +2,8 @@ package jp.furyu.mvvm_test.viewmodel
 
 import android.arch.lifecycle.*
 import android.support.v4.app.FragmentActivity
-import jp.furyu.mvvm_test.MainActivity
 import jp.furyu.mvvm_test.Project
-import jp.furyu.mvvm_test.ProjectRepository
+import jp.furyu.mvvm_test.repository.ProjectRepository
 import jp.furyu.mvvm_test.Resource
 import javax.inject.Inject
 

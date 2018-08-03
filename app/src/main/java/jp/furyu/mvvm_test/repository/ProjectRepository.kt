@@ -1,7 +1,10 @@
-package jp.furyu.mvvm_test
+package jp.furyu.mvvm_test.repository
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import jp.furyu.mvvm_test.GithubService
+import jp.furyu.mvvm_test.Project
+import jp.furyu.mvvm_test.Resource
 import jp.furyu.mvvm_test.exception.AppException
 import retrofit2.Call
 import retrofit2.Callback
@@ -42,7 +45,7 @@ class ProjectRepository {
                 .enqueue(object: Callback<List<Project>> {
                     override fun onFailure(call: Call<List<Project>>?, t: Throwable?) {
                         val exception = AppException(t)
-                        data.value = Resource.error( exception)
+                        data.value = Resource.error(exception)
                     }
 
                     override fun onResponse(call: Call<List<Project>>?, response: Response<List<Project>>?) {
