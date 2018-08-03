@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -48,4 +49,13 @@ dependencies {
     // Other
     implementation "com.squareup.okhttp3:okhttp:3.10.0"
     implementation "com.squareup.okhttp3:logging-interceptor:3.9.0"
+    // https://github.com/BakhtarSobat/aac/blob/ff67d25fb5c49ed9ae850931ea0b62b963ecbd09/app/build.gradle
+    // ここにはokioが入っていたがなんだろ
+    // implementation 'com.squareup.okio:okio:1.7.0'
+
+    // dagger
+    implementation "com.google.dagger:dagger:2.8"
+    kapt 'com.google.dagger:dagger-compiler:2.8'
+    annotationProcessor "com.google.dagger:dagger-compiler:2.8"
+
 }
